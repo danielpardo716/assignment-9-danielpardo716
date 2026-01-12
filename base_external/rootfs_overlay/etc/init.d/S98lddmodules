@@ -5,11 +5,13 @@ case "$1" in
         echo "Starting ldd"
         scull_load
         module_load faulty
+        module_load aesdchar
         modprobe hello
         ;;
     stop)
         echo "Stopping ldd"
         scull_unload
+        module_unload aesdchar
         module_unload faulty
         rmmod hello
         ;;
